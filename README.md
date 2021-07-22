@@ -1,4 +1,4 @@
-# Dosage-CalculatorS
+# Dosage-Calculator
 
 A new Flutter project.
 
