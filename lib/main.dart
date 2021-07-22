@@ -67,10 +67,46 @@ class _InfusionBaseState extends State<InfusionBase> {
       textDirection: TextDirection.ltr,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
-        Text('1', textDirection: TextDirection.ltr),
-        Text('2', textDirection: TextDirection.ltr),
-        Text('3', textDirection: TextDirection.ltr),
-        Text('4', textDirection: TextDirection.ltr),
+        // Coconut Oil Selection Button
+        Expanded(
+          child: new Directionality(
+            textDirection: TextDirection.ltr,
+            child: TextButton(
+              child: Text('Coconut Oil', textDirection: TextDirection.ltr),
+              onPressed: () => null,
+            ),
+          ),
+        ),
+        // Butter Selection Button
+        Expanded(
+          child: new Directionality(
+            textDirection: TextDirection.ltr,
+            child: TextButton(
+              child: Text('Butter', textDirection: TextDirection.ltr),
+              onPressed: () => null,
+            ),
+          ),
+        ),
+        // Olive Oil Selection Button
+        Expanded(
+          child: new Directionality(
+            textDirection: TextDirection.ltr,
+            child: TextButton(
+              child: Text('Olive Oil', textDirection: TextDirection.ltr),
+              onPressed: () => null,
+            ),
+          ),
+        ),
+        // Honey Selection Button
+        Expanded(
+          child: new Directionality(
+            textDirection: TextDirection.ltr,
+            child: TextButton(
+              child: Text('Honey', textDirection: TextDirection.ltr),
+              onPressed: () => null,
+            ),
+          ),
+        ),
       ],
     );
   }
