@@ -1,9 +1,9 @@
-import 'package:dosage_calc/text_input.dart';
+import 'package:dosage_calc/input.dart';
 import 'package:flutter/material.dart';
 
 import 'bases.dart';
 import 'total.dart';
-import 'text_input.dart';
+import 'input.dart';
 
 void main() => runApp(MyApp());
 
