@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
       child: Column(
         children: [
           Total(),
-          InfusionBase(['Butter', 'Coconut Oil', 'Olive Oil', 'Honey']),
+          InfusionBase(),
         ],
       ),
     );
@@ -32,19 +32,17 @@ class Total extends StatefulWidget {
 class _TotalState extends State<Total> {
   @override
   Widget build(BuildContext context) {
-    return Center(child: _buildTotal('1000'));
+    return Center(child: _buildTotalText('1000'));
   }
 
   //
-  Widget _buildTotal(totalValue) {
-    return Center(
-      child: Text(
-        totalValue.toString() + 'mg',
-        textDirection: TextDirection.ltr,
-        style: TextStyle(
-          fontSize: 32,
-          color: Colors.black87,
-        ),
+  Widget _buildTotalText(totalValue) {
+    return Text(
+      totalValue.toString() + 'mg',
+      textDirection: TextDirection.ltr,
+      style: TextStyle(
+        fontSize: 32,
+        color: Colors.black87,
       ),
     );
   }
@@ -54,13 +52,14 @@ class _TotalState extends State<Total> {
 //
 // *******************************************
 class InfusionBase extends StatefulWidget {
-  const InfusionBase(List<String> list, {Key? key}) : super(key: key);
+  const InfusionBase({Key? key}) : super(key: key);
 
   @override
   _InfusionBaseState createState() => _InfusionBaseState();
 }
 
 class _InfusionBaseState extends State<InfusionBase> {
+  //
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -74,6 +73,7 @@ class _InfusionBaseState extends State<InfusionBase> {
         ]);
   }
 
+  //
   Widget _buildBtn(String option) {
     return Expanded(
         child: new Directionality(
