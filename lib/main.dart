@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
       child: Column(
         children: [
           Total(),
-          InfusionBase(),
+          InfusionBase(['Butter', 'Coconut Oil', 'Olive Oil', 'Honey']),
         ],
       ),
     );
@@ -54,7 +54,7 @@ class _TotalState extends State<Total> {
 //
 // *******************************************
 class InfusionBase extends StatefulWidget {
-  const InfusionBase({Key? key}) : super(key: key);
+  const InfusionBase(List<String> list, {Key? key}) : super(key: key);
 
   @override
   _InfusionBaseState createState() => _InfusionBaseState();
@@ -64,50 +64,22 @@ class _InfusionBaseState extends State<InfusionBase> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      textDirection: TextDirection.ltr,
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: <Widget>[
-        // Coconut Oil Selection Button
-        Expanded(
-          child: new Directionality(
+        textDirection: TextDirection.ltr,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          _buildBtn('Butter'),
+          _buildBtn('Olive Oil'),
+          _buildBtn('Coconut Oild'),
+          _buildBtn('Honey'),
+        ]);
+  }
+
+  Widget _buildBtn(String option) {
+    return Expanded(
+        child: new Directionality(
             textDirection: TextDirection.ltr,
             child: TextButton(
-              child: Text('Coconut Oil', textDirection: TextDirection.ltr),
-              onPressed: () => null,
-            ),
-          ),
-        ),
-        // Butter Selection Button
-        Expanded(
-          child: new Directionality(
-            textDirection: TextDirection.ltr,
-            child: TextButton(
-              child: Text('Butter', textDirection: TextDirection.ltr),
-              onPressed: () => null,
-            ),
-          ),
-        ),
-        // Olive Oil Selection Button
-        Expanded(
-          child: new Directionality(
-            textDirection: TextDirection.ltr,
-            child: TextButton(
-              child: Text('Olive Oil', textDirection: TextDirection.ltr),
-              onPressed: () => null,
-            ),
-          ),
-        ),
-        // Honey Selection Button
-        Expanded(
-          child: new Directionality(
-            textDirection: TextDirection.ltr,
-            child: TextButton(
-              child: Text('Honey', textDirection: TextDirection.ltr),
-              onPressed: () => null,
-            ),
-          ),
-        ),
-      ],
-    );
+                onPressed: () => null,
+                child: Text(option, textDirection: TextDirection.ltr))));
   }
 }
